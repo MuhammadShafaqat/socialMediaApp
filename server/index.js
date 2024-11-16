@@ -14,13 +14,11 @@ app.use(helmet());
 app.use(morgan("common"));
 const userRoute = require('./routers/users');
 const authRoute = require('./routers/auth');
+const postRoute = require('./routers/posts')
 
 app.use("/api/user", userRoute);
 app.use("/api/auth", authRoute);
-
- 
-
-
+app.use("/api/posts", postRoute);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, ()=>{
